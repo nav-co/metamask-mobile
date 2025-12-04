@@ -138,7 +138,7 @@ runs:
 
     ## IOS Setup ##
     - name: Configure iOS Signing Certificates
-      if: false && ${{ inputs.platform == 'ios' && inputs.configure-keystores == 'true' }}
+      if: false #&& ${{ inputs.platform == 'ios' && inputs.configure-keystores == 'true' }}
       uses: MetaMask/github-tools/.github/actions/configure-keystore@e2e-env-actions
       with:
         aws-role-to-assume: ${{ inputs.keystore-role-to-assume }}
