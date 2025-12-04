@@ -27,7 +27,7 @@ inputs:
   ruby-version:
     description: Ruby version to use (only for iOS)
     required: false
-    default: '3.1'
+    default: '3.4'
   xcode-version:
     description: Xcode version to select (e.g., 16.2)
     required: false
