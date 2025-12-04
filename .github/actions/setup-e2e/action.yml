@@ -119,6 +119,7 @@ runs:
       shell: bash
 
     - name: Install Foundry
+      if: false 
       shell: bash
       run: |
         echo "Installing Foundry via foundryup..."
