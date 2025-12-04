@@ -148,7 +148,7 @@ runs:
 
     ## Ruby Setup & Cache Management
     - name: Setup Ruby
-      if: ${{ inputs.platform == 'ios' }}
+      if: false #${{ inputs.platform == 'ios' }}
       uses: ruby/setup-ruby@a4effe49ee8ee5b8b5091268c473a4628afb5651
       with:
         ruby-version: ${{ inputs.ruby-version }}
