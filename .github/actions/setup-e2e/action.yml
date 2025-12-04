@@ -115,7 +115,7 @@ runs:
 
     - name: Install Detox CLI
       id: install-detox-cli
-      run: yarn global add detox-cli
+      run: npm install -g detox-cli
       shell: bash
 
     - name: Install Foundry
