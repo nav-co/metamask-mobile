@@ -1,6 +1,7 @@
 name: Build iOS E2E Apps
 
 on:
+  workflow_dispatch:
   workflow_call:
 
 permissions:
@@ -10,7 +11,9 @@ permissions:
 jobs:
   build-ios-apps:
     name: Build iOS E2E Apps
-    runs-on: ghcr.io/cirruslabs/macos-runner:sequoia-xl
+    runs-on:
+      group: bitrise
+      labels: machine_type:g2.mac.4large
     outputs:
       artifacts-url: ${{ steps.set-artifacts-url.outputs.artifacts-url }}
       app-uploaded: ${{ steps.upload-app.outcome == 'success' }}
