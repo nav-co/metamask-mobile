@@ -11,6 +11,7 @@
 name: Setup Node Modules
 
 on:
+  workflow_dispatch:
   workflow_call:
     inputs:
       ref:
