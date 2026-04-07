@@ -87,6 +87,9 @@ jobs:
           fetch-depth: ${{ inputs.fetch-depth }}
           submodules: ${{ inputs.checkout-submodules && 'recursive' || false }}
 
+      - name: Wait for 45 seconds
+        run: sleep 45
+
       # iOS: Only Node + Ruby needed (setup runs gem/bundle install, no pods/Xcode). Full iOS env is in build job.
       - name: Setup Node.js
         uses: actions/setup-node@v4
