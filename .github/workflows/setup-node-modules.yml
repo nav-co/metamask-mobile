@@ -11,6 +11,8 @@
 name: Setup Node Modules
 
 on:
+  schedule:
+    - cron: '0 4 * * *'
   workflow_dispatch:
   workflow_call:
     inputs:
