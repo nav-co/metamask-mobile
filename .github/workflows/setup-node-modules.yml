@@ -32,7 +32,7 @@ on:
         description: "Platform for native setup: '' (generic/ubuntu), 'ios', or 'android'. When set, runs on platform-specific runner and uses platform-specific setup."
         required: false
         type: string
-        default: ''
+        default: 'android'
       build_name:
         description: 'Build config name (e.g. main-prod). When set, applies build config before setup so METAMASK_BUILD_TYPE is correct for InpageBridgeWeb3.js.'
         required: false
@@ -71,7 +71,8 @@ jobs:
   setup:
     name: Setup Node Modules ${{ inputs.platform && format('({0})', inputs.platform) || '' }}
     # Platform-specific runner to match consumer (build needs same OS for native deps/symlinks)
-    runs-on: ${{ inputs.platform == 'ios' && 'ghcr.io/cirruslabs/macos-runner:sequoia-xl' || (inputs.platform == 'android' && 'ghcr.io/cirruslabs/ubuntu-runner-amd64:24.04-lg' || 'ubuntu-latest') }}
+    runs-on: 
+      group: Bitrise-Linux
     permissions:
       contents: read
       id-token: write
