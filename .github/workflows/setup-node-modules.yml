@@ -227,3 +227,15 @@ jobs:
           compression-level: 1
           if-no-files-found: warn
           include-hidden-files: true
+
+      - name: Debug monitoring logs                                                       
+        if: always()                                                                      
+        run: |                                
+          echo "=== supabase.log ==="                                                     
+          cat /tmp/gha-monitoring/supabase.log || echo "(not found)"                      
+          echo "=== daemon.log ==="           
+          cat /tmp/gha-monitoring/daemon.log || echo "(not found)"                        
+          echo "=== CSV files ==="                                                        
+          ls -la /tmp/gha-monitoring/*.csv 2>/dev/null || echo "(none)"                 
+          echo "=== CSV row count ==="                                                    
+          wc -l /tmp/gha-monitoring/*.csv 2>/dev/null || echo "(none)" 
