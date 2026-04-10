@@ -1,8 +1,6 @@
 name: Crowdin Download Approved Translations Action
 
 on:
-  schedule:
-    - cron: '0 */12 * * *'
   workflow_dispatch:
 
 jobs:
