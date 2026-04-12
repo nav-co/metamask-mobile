@@ -13,9 +13,6 @@ name: Nightly Build
 # but remain unique, which is all TestFlight / Play Store require.
 
 on:
-  schedule:
-    # NOTE: Scheduled workflows ALWAYS run from the default branch (main)
-    - cron: '0 4 * * *'
   workflow_dispatch:
 
 permissions:
