@@ -1,7 +1,5 @@
 name: Performance E2E Tests for Release Builds
 on:
-  schedule:
-    - cron: '*/30 * * * *' # Every 30 minutes to check for metamaskbot commits
   workflow_dispatch:
     inputs:
       sentry_target:
