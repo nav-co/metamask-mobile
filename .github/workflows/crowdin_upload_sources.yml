@@ -1,9 +1,6 @@
 name: Crowdin Upload Sources Action
 
 on:
-  push:
-    branches:
-      - main
 
 jobs:
   upload-sources:
